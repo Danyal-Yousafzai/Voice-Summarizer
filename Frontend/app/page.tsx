@@ -63,7 +63,8 @@ export default function VoiceSummarizer() {
         formData.append('file', file);
 
         // Make fetch POST request to the backend
-        const response = await fetch('http://127.0.0.1:8000/summarize/', {
+        // Make fetch POST request to the live backend
+        const response = await fetch('https://voice-summarizer-n4gd.onrender.com/summarize/', {
           method: 'POST',
           body: formData,
         });
