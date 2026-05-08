@@ -62,7 +62,6 @@ export default function VoiceSummarizer() {
         const formData = new FormData();
         formData.append('file', file);
 
-        // Make fetch POST request to the backend
         // Make fetch POST request to the live backend
         const response = await fetch('https://voice-summarizer-n4gd.onrender.com/summarize/', {
           method: 'POST',
@@ -111,7 +110,7 @@ export default function VoiceSummarizer() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-white to-blue-50 flex items-center justify-center p-4">
+    <main className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-white to-blue-50 flex items-center justify-center p-4 pb-24">
       <div className="w-full max-w-2xl">
         {/* STATE 1: INPUT SCREEN */}
         {state === 'input' && (
@@ -250,7 +249,7 @@ export default function VoiceSummarizer() {
 
               {/* Transcript Card - Expandable */}
               {isTranscriptOpen && (
-                <Card className="p-6 md:p-8 bg-white border-slate-200 animate-in slide-in-from-top duration-300">
+                <Card className="p-6 md:p-8 bg-white border-slate-200 animate-in slide-in-from-top duration-300 max-h-96 overflow-y-auto">
                   <div
                     dir="auto"
                     className="text-start text-slate-700 leading-relaxed space-y-3 whitespace-pre-wrap"
